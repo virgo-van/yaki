@@ -37,19 +37,16 @@
     <div class="item">
         <div class="title">多选框组件：</div>
         <div class="container">
-<!--            <ya-checkbox v-model="check" disabled>篮球</ya-checkbox>-->
-<!--            <ya-checkbox v-model="check">羽毛球</ya-checkbox>-->
-<!--            <ya-checkbox v-model="check">足球</ya-checkbox>-->
-<!--            <ya-checkbox v-model="check">排球</ya-checkbox>-->
+            <!--            <ya-checkbox v-model="check" disabled>篮球</ya-checkbox>-->
+            <!--            <ya-checkbox v-model="check">羽毛球</ya-checkbox>-->
+            <!--            <ya-checkbox v-model="check">足球</ya-checkbox>-->
+                        <ya-checkbox v-model="check">排球</ya-checkbox>
 
             <div class="check-group">
-                <ya-checkbox-group v-model="checkGroup" @change="">
-                    <ya-checkbox label="0">羽毛球</ya-checkbox>
-                    <ya-checkbox label="1">足球</ya-checkbox>
-                    <ya-checkbox label="2">排球</ya-checkbox>
-                </ya-checkbox-group>
+                <ya-checkbox-group v-model="checkGroup" :options="checkOption" @change=""></ya-checkbox-group>
             </div>
 
+            <button @click="getCheckValue">点击</button>
         </div>
     </div>
 
@@ -64,11 +61,21 @@ export default {
     setup() {
         const state = reactive({
             check: false,
-            checkGroup: []
+            checkGroup: ['0','3'],
+            checkOption: [
+                {label: "篮球", value: '0', disabled: false},
+                {label: "足球", value: '1', disabled: true},
+                {label: "排球", value: '2', disabled: false},
+                {label: "乒乓球", value: '3', disabled: false},
+                {label: "自行车", value: '4', disabled: false},
+                {label: "击剑", value: '5', disabled: false},
+            ]
         })
 
+        const getCheckValue = () => {
+        }
         return {
-            ...toRefs(state)
+            ...toRefs(state), getCheckValue
         }
     }
 }

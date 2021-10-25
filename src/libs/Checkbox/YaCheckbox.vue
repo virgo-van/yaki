@@ -24,15 +24,13 @@ export default {
         label: String
     },
     setup(props, ctx) {
-        console.log(ctx.slots.default())
         const state = reactive({
             checkValue: props.modelValue
         })
 
-
         const checkboxChange = () => {
-            console.log(state.checkValue)
-            ctx.emit('input', state.checkValue)
+           ctx.emit('update:modelValue', state.checkValue)
+           ctx.emit('on-change', state.checkValue)
         }
 
         return {
