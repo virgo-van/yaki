@@ -1,6 +1,6 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
 
-import YakiUI from "@/lib";
+import YakiUI from "./libs/index.js";
 
 createApp(App).use(YakiUI).mount('#app')

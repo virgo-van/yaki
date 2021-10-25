@@ -1,0 +1,195 @@
+@import "../css/index.scss";
+
+.ya-button {
+    box-sizing: border-box;
+    margin: 0 10px 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    height: 44px;
+    line-height: 44px;
+    min-width: 120px;
+    padding: 0 20px;
+    vertical-align: middle;
+
+    &.ya-small-button {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 16px;
+        min-width: 100px;
+        font-size: 14px;
+
+        &.is-round {
+            border-radius: 14px;
+        }
+    }
+
+    &.ya-mini-button {
+        height: 28px;
+        line-height: 28px;
+        padding: 0 12px;
+        min-width: 80px;
+        font-size: 14px;
+
+        &.is-round {
+            border-radius: 14px;
+        }
+    }
+
+
+    &.is-round {
+        border-radius: 22px;
+    }
+
+    &.is-disabled {
+        cursor: not-allowed;
+    }
+
+    &.ya-primary-button {
+        background: $--primary-color;
+        color: #fff;
+
+        &.is-plain {
+            border: 1px solid $--primary-color;
+            background: #fff;
+            color: $--primary-color;
+
+            &:hover, &:active, &:focus {
+                background: $--primary-sallow-color;
+                border: 1px solid $--primary-active-color;
+            }
+        }
+
+        &.is-disabled {
+            background: $--disabled-color;
+            border: none;
+            color: $--disabled-text-color;
+
+            &:hover, &:active, &:focus {
+                background: $--disabled-color;
+                border: none;
+                color: $--disabled-text-color;
+            }
+        }
+
+        &:hover, &:active, &:focus {
+            background: $--primary-active-color;
+        }
+
+    }
+
+    &.ya-warning-button {
+        background: $--warning-color;
+        color: #fff;
+
+        &.is-plain {
+            border: 1px solid $--warning-color;
+            background: #fff;
+            color: $--warning-color;
+
+            &:hover, &:active, &:focus {
+                background: $--warning-sallow-color;
+                border: 1px solid $--warning-active-color;
+            }
+        }
+
+        &.is-disabled {
+            background: $--disabled-color;
+            border: none;
+            color: $--disabled-text-color;
+
+            &:hover, &:active, &:focus {
+                background: $--disabled-color;
+                border: none;
+                color: $--disabled-text-color;
+            }
+        }
+
+        &:hover, &:active, &:focus {
+            background: $--warning-active-color;
+        }
+
+    }
+
+
+    &.ya-success-button {
+        background: $--success-color;
+        color: #fff;
+
+        &.is-plain {
+            border: 1px solid $--success-color;
+            background: #fff;
+            color: $--success-color;
+
+            &:hover, &:active, &:focus {
+                background: $--success-sallow-color;
+                border: 1px solid $--success-active-color;
+            }
+        }
+
+        &.is-disabled {
+            background: $--disabled-color;
+            border: none;
+            color: $--disabled-text-color;
+
+            &:hover, &:active, &:focus {
+                background: $--disabled-color;
+                border: none;
+                color: $--disabled-text-color;
+            }
+        }
+
+        &:hover, &:active, &:focus {
+            background: $--success-active-color;
+        }
+
+    }
+
+    &.ya-error-button {
+        background: $--error-color;
+        color: #fff;
+
+        &.is-plain {
+            border: 1px solid $--error-color;;
+            background: #fff;
+            color: $--error-color;;
+
+            &:hover, &:active, &:focus {
+                background: $--error-sallow-color;
+                border: 1px solid $--error-active-color;
+            }
+        }
+
+        &.is-disabled {
+            background: $--disabled-color;
+            border: none;
+            color: $--disabled-text-color;
+
+            &:hover, &:active, &:focus {
+                background: $--disabled-color;
+                border: none;
+                color: $--disabled-text-color;
+            }
+        }
+
+        &:hover, &:active, &:focus {
+            background: $--error-active-color;
+        }
+
+    }
+
+
+    &.ya-text-button {
+        color: $--primary-color;
+        background: none;
+
+        &.is-disabled {
+            color: $--disabled-text-color;
+        }
+    }
+}

@@ -1,27 +1,101 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <ya-button/>
+    <div class="item">
+        <div class="title">按钮组件：</div>
+        <div class="container">
+            <div class="button-item">
+                <ya-button icon="ya-home" size="small" plain>按钮</ya-button>
+                <ya-button icon="ya-message" size="small" round>按钮</ya-button>
+                <ya-button icon="ya-delete" size="small" disabled>按钮</ya-button>
+                <ya-button icon="ya-set" size="small">按钮</ya-button>
+            </div>
+            <div class="button-item">
+                <ya-button type="warning" icon="ya-home" size="mini" plain>按钮</ya-button>
+                <ya-button type="warning" icon="ya-message" size="mini" round>按钮</ya-button>
+                <ya-button type="warning" icon="ya-delete" size="mini" disabled>按钮</ya-button>
+                <ya-button type="warning" icon="ya-set" size="mini">按钮</ya-button>
+            </div>
+            <div class="button-item">
+                <ya-button type="success" icon="ya-home" plain>按钮</ya-button>
+                <ya-button type="success" icon="ya-message" round>按钮</ya-button>
+                <ya-button type="success" icon="ya-delete" disabled>按钮</ya-button>
+                <ya-button type="success" icon="ya-set">按钮</ya-button>
+            </div>
+            <div class="button-item">
+                <ya-button type="error" icon="ya-home" plain>按钮</ya-button>
+                <ya-button type="error" icon="ya-message" round>按钮</ya-button>
+                <ya-button type="error" icon="ya-delete" disabled>按钮</ya-button>
+                <ya-button type="error" icon="ya-set">按钮</ya-button>
+            </div>
+            <div class="button-item">
+                <ya-button type="text" icon="ya-home" disabled>按钮</ya-button>
+                <ya-button type="text" icon="ya-message">按钮</ya-button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="title">多选框组件：</div>
+        <div class="container">
+<!--            <ya-checkbox v-model="check" disabled>篮球</ya-checkbox>-->
+<!--            <ya-checkbox v-model="check">羽毛球</ya-checkbox>-->
+<!--            <ya-checkbox v-model="check">足球</ya-checkbox>-->
+<!--            <ya-checkbox v-model="check">排球</ya-checkbox>-->
+
+            <div class="check-group">
+                <ya-checkbox-group v-model="checkGroup" @change="">
+                    <ya-checkbox label="0">羽毛球</ya-checkbox>
+                    <ya-checkbox label="1">足球</ya-checkbox>
+                    <ya-checkbox label="2">排球</ya-checkbox>
+                </ya-checkbox-group>
+            </div>
+
+        </div>
+    </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import {reactive, toRefs} from "vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    setup() {
+        const state = reactive({
+            check: false,
+            checkGroup: []
+        })
+
+        return {
+            ...toRefs(state)
+        }
+    }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+
+    .item {
+        width: 800px;
+        margin: 50px auto;
+        text-align: left;
+        background: #f9f9f9;
+        padding: 50px;
+        box-sizing: border-box;
+
+        .title {
+            margin: 25px 0;
+            font-size: 24px;
+        }
+    }
+
 }
 </style>
