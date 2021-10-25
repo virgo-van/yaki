@@ -3,22 +3,23 @@
         <div class="title">按钮组件：</div>
         <div class="container">
             <div class="button-item">
+                <ya-button type="success" icon="ya-home" size="mini" plain>按钮</ya-button>
+                <ya-button type="success" icon="ya-message" size="mini" round>按钮</ya-button>
+                <ya-button type="success" icon="ya-delete" size="mini" disabled>按钮</ya-button>
+                <ya-button type="success" icon="ya-set" size="mini">按钮</ya-button>
+            </div>
+            <div class="button-item">
                 <ya-button icon="ya-home" size="small" plain>按钮</ya-button>
                 <ya-button icon="ya-message" size="small" round>按钮</ya-button>
                 <ya-button icon="ya-delete" size="small" disabled>按钮</ya-button>
                 <ya-button icon="ya-set" size="small">按钮</ya-button>
             </div>
+
             <div class="button-item">
-                <ya-button type="warning" icon="ya-home" size="mini" plain>按钮</ya-button>
-                <ya-button type="warning" icon="ya-message" size="mini" round>按钮</ya-button>
-                <ya-button type="warning" icon="ya-delete" size="mini" disabled>按钮</ya-button>
-                <ya-button type="warning" icon="ya-set" size="mini">按钮</ya-button>
-            </div>
-            <div class="button-item">
-                <ya-button type="success" icon="ya-home" plain>按钮</ya-button>
-                <ya-button type="success" icon="ya-message" round>按钮</ya-button>
-                <ya-button type="success" icon="ya-delete" disabled>按钮</ya-button>
-                <ya-button type="success" icon="ya-set">按钮</ya-button>
+                <ya-button type="warning" icon="ya-home" plain>按钮</ya-button>
+                <ya-button type="warning" icon="ya-message" round>按钮</ya-button>
+                <ya-button type="warning" icon="ya-delete" disabled>按钮</ya-button>
+                <ya-button type="warning" icon="ya-set">按钮</ya-button>
             </div>
             <div class="button-item">
                 <ya-button type="error" icon="ya-home" plain>按钮</ya-button>
@@ -40,7 +41,7 @@
             <!--            <ya-checkbox v-model="check" disabled>篮球</ya-checkbox>-->
             <!--            <ya-checkbox v-model="check">羽毛球</ya-checkbox>-->
             <!--            <ya-checkbox v-model="check">足球</ya-checkbox>-->
-                        <ya-checkbox v-model="check">排球</ya-checkbox>
+            <ya-checkbox v-model="check">排球</ya-checkbox>
 
             <div class="check-group">
                 <ya-checkbox-group v-model="checkGroup" :options="checkOption" @change=""></ya-checkbox-group>
@@ -61,7 +62,7 @@ export default {
     setup() {
         const state = reactive({
             check: false,
-            checkGroup: ['0','3'],
+            checkGroup: ['0', '3'],
             checkOption: [
                 {label: "篮球", value: '0', disabled: false},
                 {label: "足球", value: '1', disabled: true},
@@ -73,6 +74,7 @@ export default {
         })
 
         const getCheckValue = () => {
+            console.log(state.checkGroup.join('-'))
         }
         return {
             ...toRefs(state), getCheckValue
