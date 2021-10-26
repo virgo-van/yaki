@@ -4,6 +4,7 @@
         <div class="title">输入框组件</div>
         <div class="container">
             <ya-input v-model="inputValue" clearable></ya-input>
+            <ya-input v-model="inputValue" disabled></ya-input>
             <ya-input v-model="inputValue" prefix-icon="ya-home" clearable></ya-input>
             <ya-input v-model="inputValue" suffix-icon="ya-message" clearable></ya-input>
             <ya-input v-model="inputValue" suffix-icon="ya-time" clearable style="width: 100%"

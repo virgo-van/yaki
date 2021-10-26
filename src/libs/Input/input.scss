@@ -12,6 +12,18 @@
     line-height: 34px;
     margin: 0 20px 10px 0;
 
+
+    &.disabled {
+        cursor: not-allowed;
+        background: $--disabled-text-color;
+        border: 1px solid $--disabled-color;
+
+        .input {
+            background: $--disabled-text-color;
+            cursor: not-allowed;
+        }
+    }
+
     &.is-prefix {
         padding-left: 32px;
         position: relative;

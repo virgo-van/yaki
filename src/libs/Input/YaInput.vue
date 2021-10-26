@@ -1,10 +1,11 @@
 <template>
     <div class="ya-input"
-         :class="[clearable?'is-clear':'',isFocus?'focus':'',!!prefixIcon?'is-prefix':'',!!suffixIcon?'is-suffix':'']"
+         :class="[clearable?'is-clear':'',isFocus?'focus':'',!!prefixIcon?'is-prefix':'',!!suffixIcon?'is-suffix':'',disabled?'disabled':'']"
          v-focus>
         <i class="iconfont suffix" :class="suffixIcon"></i>
         <i class="iconfont prefix" :class="prefixIcon"></i>
-        <input type="text" class="input" v-model="modelValue" :placeholder="placeholder" @keyup="inputChange">
+        <input type="text" class="input" v-model="modelValue" :placeholder="placeholder" @keyup="inputChange"
+               :disabled="disabled">
         <i class="iconfont clear-btn ya-close" v-show="clearable && modelValue !=='' && !suffixIcon "
            @click="clearHandle"></i>
     </div>
@@ -30,6 +31,7 @@ export default {
         }
     },
     props: {
+        disabled: Boolean,
         prefixIcon: String,
         suffixIcon: String,
         clearable: Boolean,
