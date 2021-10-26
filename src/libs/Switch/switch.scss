@@ -1,0 +1,67 @@
+@import "../css/index.scss";
+
+.ya-switch {
+    display: inline-block;
+    margin-right: 20px;
+
+    &.is-checked {
+        .switch-container {
+            text-align: right;
+        }
+    }
+
+    &.ya-switch-small {
+        .switch-container {
+            width: 62px;
+            height: 30px;
+            border-radius: 15px;
+
+            .switch-item {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+
+    &.ya-switch-mini {
+        .switch-container {
+            width: 50px;
+            height: 24px;
+            border-radius: 12px;
+
+            .switch-item {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .switch-container {
+        display: inline-block;
+        width: 70px;
+        height: 34px;
+        border-radius: 17px;
+        padding: 2px;
+        box-sizing: border-box;
+        text-align: left;
+        cursor: pointer;
+
+        .switch-item {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #fff;
+
+            &.active {
+                background: #fff;
+            }
+        }
+    }
+
+    input[type='checkbox'] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}

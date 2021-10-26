@@ -1,0 +1,108 @@
+@import "../css/index.scss";
+
+.ya-radio {
+    display: inline-block;
+    margin: 0 20px 10px 0;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+
+    label {
+        cursor: pointer;
+    }
+
+    &:hover {
+        .radio-span {
+            border: 1px solid $--primary;
+        }
+    }
+
+    .radio-span {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+
+    input[type='radio'] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    .radio-span, .text {
+        vertical-align: middle;
+    }
+
+    .text {
+        margin-left: 5px;
+    }
+
+
+    &.is-checked {
+        .radio-span {
+            border: 1px solid $--primary;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: $--primary;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+            }
+        }
+
+        .text {
+            color: $--primary;
+        }
+
+    }
+
+    &.is-disabled {
+        label {
+            cursor: not-allowed;
+        }
+
+        .radio-span {
+            border: 1px solid $--disabled-color;
+            background: $--disabled-text-color;
+            position: relative;
+
+            //&::after {
+            //    content: "";
+            //    width: 10px;
+            //    height: 10px;
+            //    border-radius: 50%;
+            //    background: $--disabled-color;
+            //    position: absolute;
+            //    top: 3px;
+            //    left: 3px;
+            //}
+        }
+
+        &.is-checked {
+            .radio-span {
+                &::after {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: $--disabled-color;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                }
+            }
+        }
+
+        .text {
+            color: $--disabled-text-color;
+        }
+    }
+
+}

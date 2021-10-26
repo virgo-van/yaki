@@ -1,4 +1,31 @@
 <template>
+    <ya-button @click="buttonHandle" size="mini">测试点击</ya-button>
+    <div class="item">
+        <div class="title">输入框组件</div>
+        <div class="container">
+            <ya-input></ya-input>
+        </div>
+    </div>
+    <div class="item">
+        <div class="title">开关组件</div>
+        <div class="container">
+            <ya-switch v-model="switchValue" color="#f08300"/>
+            <ya-switch v-model="switchValue" size="small" color="#FF3336"/>
+            <ya-switch v-model="switchValue" size="mini" color="#0190ff"/>
+        </div>
+    </div>
+    <div class="item">
+        <div class="title">单选框</div>
+        <div class="container">
+            <ya-radio v-model="radioValue" label="0" disabled>北京</ya-radio>
+            <ya-radio v-model="radioValue" label="1">深圳</ya-radio>
+            <ya-radio v-model="radioValue" label="2">上海</ya-radio>
+            <ya-radio v-model="radioValue" label="3">广州</ya-radio>
+            <div class="group">
+                <ya-radio-group v-model="radioGroupValue" :option="checkOption"></ya-radio-group>
+            </div>
+        </div>
+    </div>
     <div class="item">
         <div class="title">按钮组件：</div>
         <div class="container">
@@ -34,7 +61,6 @@
 
         </div>
     </div>
-
     <div class="item">
         <div class="title">多选框组件：</div>
         <div class="container">
@@ -44,13 +70,14 @@
             <ya-checkbox v-model="check">排球</ya-checkbox>
 
             <div class="check-group">
-                <ya-checkbox-group v-model="checkGroup" :options="checkOption" @change=""></ya-checkbox-group>
+                <ya-checkbox-group v-model="checkGroup" :options="checkOption"></ya-checkbox-group>
             </div>
-
-            <button @click="getCheckValue">点击</button>
         </div>
     </div>
-
+    <div class="item">
+        <div class="title"></div>
+        <div class="container"></div>
+    </div>
 </template>
 
 <script>
@@ -62,6 +89,9 @@ export default {
     setup() {
         const state = reactive({
             check: false,
+            radioValue: "0",
+            switchValue: false,
+            radioGroupValue: "2",
             checkGroup: ['0', '3'],
             checkOption: [
                 {label: "篮球", value: '0', disabled: false},
@@ -76,8 +106,13 @@ export default {
         const getCheckValue = () => {
             console.log(state.checkGroup.join('-'))
         }
+
+        const buttonHandle = () => {
+            console.log(state.radioGroupValue)
+            state.switchValue = !state.switchValue
+        }
         return {
-            ...toRefs(state), getCheckValue
+            ...toRefs(state), getCheckValue, buttonHandle
         }
     }
 }
