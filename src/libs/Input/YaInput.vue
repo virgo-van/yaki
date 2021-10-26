@@ -37,7 +37,10 @@ export default {
             type: String,
             default: 'text'
         },
-        placeholder: String,
+        placeholder: {
+            type: String,
+            default: "请输入内容"
+        },
         size: {
             type: String,
             default: "medium"

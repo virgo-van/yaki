@@ -6,7 +6,8 @@
             <ya-input v-model="inputValue" clearable></ya-input>
             <ya-input v-model="inputValue" prefix-icon="ya-home" clearable></ya-input>
             <ya-input v-model="inputValue" suffix-icon="ya-message" clearable></ya-input>
-            <ya-input v-model="inputValue" suffix-icon="ya-time" clearable style="width: 100%"></ya-input>
+            <ya-input v-model="inputValue" suffix-icon="ya-time" clearable style="width: 100%"
+                      placeholder="请输入内容"></ya-input>
         </div>
     </div>
     <div class="item">
@@ -78,6 +79,12 @@
         </div>
     </div>
     <div class="item">
+        <div class="title">图标</div>
+        <div class="container">
+            <icon/>
+        </div>
+    </div>
+    <div class="item">
         <div class="title"></div>
         <div class="container"></div>
     </div>
@@ -86,9 +93,11 @@
 <script>
 
 import {reactive, toRefs} from "vue";
+import Icon from "./libs/icon/Icon.vue";
 
 export default {
     name: 'App',
+    components: {Icon},
     setup() {
         const state = reactive({
             check: false,
