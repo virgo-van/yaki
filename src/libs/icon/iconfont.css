@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2890020 */
+  src: url('iconfont.woff2?t=1635145392343') format('woff2'),
+       url('iconfont.woff?t=1635145392343') format('woff'),
+       url('iconfont.ttf?t=1635145392343') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ya-check:before {
+  content: "\e6fe";
+}
+
+.ya-file-upload:before {
+  content: "\e6f8";
+}
+
+.ya-message:before {
+  content: "\e6f9";
+}
+
+.ya-location:before {
+  content: "\e6fa";
+}
+
+.ya-set:before {
+  content: "\e6fb";
+}
+
+.ya-delete:before {
+  content: "\e6fc";
+}
+
+.ya-zoom-in:before {
+  content: "\e6fd";
+}
+
+.ya-home:before {
+  content: "\e6e4";
+}
+
+.ya-shop:before {
+  content: "\e6e5";
+}
+
+.ya-file:before {
+  content: "\e6e6";
+}
+
+.ya-explain:before {
+  content: "\e6e7";
+}
+
+.ya-link:before {
+  content: "\e6e8";
+}
+
+.ya-folder-collect:before {
+  content: "\e6e9";
+}
+
+.ya-collect:before {
+  content: "\e6ea";
+}
+
+.ya-right:before {
+  content: "\e6eb";
+}
+
+.ya-create:before {
+  content: "\e6ec";
+}
+
+.ya-edit:before {
+  content: "\e6ed";
+}
+
+.ya-note:before {
+  content: "\e6ee";
+}
+
+.ya-chat:before {
+  content: "\e6ef";
+}
+
+.ya-folder:before {
+  content: "\e6f0";
+}
+
+.ya-like:before {
+  content: "\e6f1";
+}
+
+.ya-zoom-out:before {
+  content: "\e6f2";
+}
+
+.ya-time:before {
+  content: "\e6f3";
+}
+
+.ya-search:before {
+  content: "\e6f4";
+}
+
+.ya-image:before {
+  content: "\e6f5";
+}
+
+.ya-error:before {
+  content: "\e6f6";
+}
+
+.ya-document:before {
+  content: "\e6f7";
+}
+
