@@ -3,7 +3,10 @@
     <div class="item">
         <div class="title">输入框组件</div>
         <div class="container">
-            <ya-input></ya-input>
+            <ya-input v-model="inputValue" clearable></ya-input>
+            <ya-input v-model="inputValue" prefix-icon="ya-home" clearable></ya-input>
+            <ya-input v-model="inputValue" suffix-icon="ya-message" clearable></ya-input>
+            <ya-input v-model="inputValue" suffix-icon="ya-time" clearable style="width: 100%"></ya-input>
         </div>
     </div>
     <div class="item">
@@ -89,6 +92,7 @@ export default {
     setup() {
         const state = reactive({
             check: false,
+            inputValue: "1111111111111",
             radioValue: "0",
             switchValue: false,
             radioGroupValue: "2",
@@ -108,8 +112,7 @@ export default {
         }
 
         const buttonHandle = () => {
-            console.log(state.radioGroupValue)
-            state.switchValue = !state.switchValue
+            console.log(state.inputValue)
         }
         return {
             ...toRefs(state), getCheckValue, buttonHandle
